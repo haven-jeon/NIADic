@@ -1,0 +1,1033 @@
+품사	단어
+NC	레드 카펫
+NC	레드카펫
+NC	하늘 공원
+NC	하늘공원
+NC	국립박물관
+NC	경마 공원
+NC	경마공원
+NC	놀이 공원
+NC	놀이공원
+NC	워터 파크
+NC	워터파크
+NC	화산
+NC	사옥
+NC	과소 지역
+NC	과소지역
+NC	관광 취락
+NC	관광취락
+NC	광역경제권
+NC	광역도시권
+NC	구릉지
+NC	국도
+NC	근교
+NC	범람원
+NC	분지
+NC	산업 단지
+NC	산업단지
+NC	산촌
+NC	삼각주
+NC	선상지
+NC	수도
+NC	연안
+NC	용암 대지
+NC	용암대지
+NC	유원지
+NC	지방도
+NC	해수 욕장
+NC	해수욕장
+NC	해안
+NC	해안 분지
+NC	해안분지
+NC	해협
+NC	gate
+NC	가극장
+NC	가든
+NC	간선 도로
+NC	간이진료소
+NC	감방
+NC	감옥
+NC	강의실
+NC	객실
+NC	갤러리
+NC	거점 도시
+NC	거점도시
+NC	게이 빌리지
+NC	게이 타운
+NC	게이빌리지
+NC	게이타운
+NC	결혼 식장
+NC	결혼식장
+NC	경기장
+NC	경로당
+NC	경수로 발전소
+NC	경수로발전소
+NC	계간지
+NC	계곡
+NC	계단
+NC	고가 도로
+NC	고가도로
+NC	고객 센터
+NC	고객센터
+NC	고속 도로
+NC	고속도로
+NC	고속화도로
+NC	고시원
+NC	고지
+NC	고향
+NC	골목
+NC	골짜기
+NC	골프 연습장
+NC	골프연습장
+NC	골프장
+NC	공군 기지
+NC	공군기지
+NC	공설 시장
+NC	공연장
+NC	공원
+NC	공중 전화
+NC	공중전화
+NC	공항
+NC	관광 도로
+NC	관광 명소
+NC	관광도로
+NC	관광명소
+NC	관광지
+NC	광장
+NC	교도소
+NC	교무실
+NC	교실
+NC	교외
+NC	교육관
+NC	교육장
+NC	교회
+NC	구장
+NC	구치소
+NC	국경 도시
+NC	국경도시
+NC	국내
+NC	국립 공원
+NC	국립공원
+NC	국제
+NC	국제 공항
+NC	국제 무역 센터
+NC	국제 무역센터
+NC	국제 전시장
+NC	국제공항
+NC	국제무역 센터
+NC	국제전 시장
+NC	국제전시장
+NC	군기지
+NC	군사 공항
+NC	군사 기지
+NC	군사 도시
+NC	군사공항
+NC	군사기지
+NC	군사도시
+NC	권역
+NC	그루터
+NC	극동
+NC	극장
+NC	근처
+NC	글로벌
+NC	금융 센터
+NC	금융 지구
+NC	금융센터
+NC	금융지구
+NC	기내
+NC	기밀 도시
+NC	기밀도시
+NC	기숙사
+NC	기업 도시
+NC	기업도시
+NC	기지
+NC	길거리
+NC	길목
+NC	나루
+NC	나요양소
+NC	낚시터
+NC	남탕
+NC	내부
+NC	노래방
+NC	노인정
+NC	놀이 동산
+NC	놀이동산
+NC	놀이터
+NC	농구 경기장
+NC	농구경기장
+NC	농장
+NC	농촌
+NC	눈썰매장
+NC	늪
+NC	다방
+NC	단상
+NC	담장
+NC	대강당
+NC	대극장
+NC	대기실
+NC	대나무숲
+NC	대륙
+NC	대성당
+NC	대학 도서관
+NC	대학 도시
+NC	대학가
+NC	대학교 도서관
+NC	대학교도서관
+NC	대학도서관
+NC	대학도시
+NC	데이터센터
+NC	도농 복합 도시
+NC	도농 통합 도시
+NC	도농복합도시
+NC	도농통합도시
+NC	도로
+NC	도립 공원
+NC	도립공원
+NC	도매 시장
+NC	도매 종합 센터
+NC	도매시장
+NC	도매종합센터
+NC	도서관
+NC	도시
+NC	도시공원
+NC	도심
+NC	도심 공항
+NC	도심공항
+NC	독립 도시
+NC	독립도시
+NC	독서실
+NC	돔구장
+NC	동네
+NC	동물 의료 센터
+NC	동물원
+NC	동물의료센터
+NC	동부 지방
+NC	동부지방
+NC	동북 지방
+NC	동북아
+NC	동북지방
+NC	동산
+NC	동쪽
+NC	뒷편
+NC	들판
+NC	라디오 방송국
+NC	라디오방송국
+NC	라이브 클럽
+NC	라이브클럽
+NC	라커룸
+NC	랜드
+NC	레저 타운
+NC	레저타운
+NC	레코딩 스튜디오
+NC	레코딩스튜디오
+NC	레크리에이션 그라운드
+NC	레크리에이션그라운드
+NC	로드샵
+NC	로비
+NC	리서치 센터
+NC	리서치센터
+NC	링
+NC	마당
+NC	마운드
+NC	마을
+NC	마켓 타운
+NC	마켓타운
+NC	맛집
+NC	매립지
+NC	멀티샵
+NC	명소
+NC	명품 갤러리
+NC	명품갤러리
+NC	명품관
+NC	모래 놀이터
+NC	모래놀이터
+NC	모자보건센터
+NC	모텔
+NC	목욕탕
+NC	목적지
+NC	무대
+NC	무역 센터
+NC	무역센터
+NC	무인도
+NC	문방구
+NC	문화 센터
+NC	문화관
+NC	문화센터
+NC	물가
+NC	물속
+NC	미군 기지
+NC	미군기지
+NC	미술관
+NC	미야하라종합운전소
+NC	민스터
+NC	바깥
+NC	바다
+NC	바닷가
+NC	바닷속
+NC	박물관
+NC	발코니
+NC	방
+NC	밭
+NC	배송지
+NC	배치간이역
+NC	백사장
+NC	백일장
+NC	버스 정류장
+NC	버스스탑
+NC	버스정류장
+NC	베드 타운
+NC	베드타운
+NC	벽면
+NC	변전소
+NC	별관
+NC	별장
+NC	보행자 공간
+NC	보행자 도로
+NC	보행자 전용 도로
+NC	보행자 전용도로
+NC	보행자공간
+NC	보행자도로
+NC	보행자전용도로
+NC	보호 구역
+NC	보호구역
+NC	복도
+NC	복식 화산
+NC	복식화산
+NC	복지관
+NC	복합 쇼핑몰
+NC	복합 화산
+NC	복합쇼핑몰
+NC	복합화산
+NC	본가
+NC	본관
+NC	본교
+NC	본부
+NC	본사
+NC	본점
+NC	본회 의장
+NC	본회의장
+NC	부두
+NC	부엌
+NC	북방
+NC	북방 지역
+NC	북방지역
+NC	북부 연방
+NC	북부 지방
+NC	북부연방
+NC	북부지방
+NC	분수대
+NC	분향소
+NC	불모지
+NC	비그늘지역
+NC	비밀 도시
+NC	비밀도시
+NC	비상구
+NC	비포장 도로
+NC	비포장도로
+NC	빈소
+NC	빵집
+NC	사무소
+NC	사무실
+NC	사무처
+NC	사업소
+NC	사업실
+NC	사업장
+NC	사용자 공간
+NC	사용자공간
+NC	사용처
+NC	사우나
+NC	사육장
+NC	사진관
+NC	사진전
+NC	산성
+NC	살롱
+NC	상가
+NC	상권
+NC	상담실
+NC	상업 지구
+NC	상업지구
+NC	상영관
+NC	상회
+NC	생태 도시
+NC	생태도시
+NC	서부
+NC	서부 지방
+NC	서부지방
+NC	서브 웨이
+NC	서브웨이
+NC	서양
+NC	서원
+NC	서재
+NC	서해
+NC	석실
+NC	선거구
+NC	선착장
+NC	섬
+NC	성
+NC	성곽 도시
+NC	성곽도시
+NC	성당
+NC	성벽 도시
+NC	성벽도시
+NC	성지
+NC	성채 도시
+NC	성채도시
+NC	성층 화산
+NC	성층화산
+NC	성탄절 시장
+NC	성탄절시장
+NC	세계 도시
+NC	세계 시장
+NC	세계도시
+NC	세계시장
+NC	세미나실
+NC	센터
+NC	소극장
+NC	소매 시장
+NC	소매시장
+NC	소방 본부
+NC	소방본부
+NC	소우지
+NC	소행성
+NC	쇼핑 센터
+NC	쇼핑센터
+NC	수력 발전소
+NC	수력발전소
+NC	수산 시장
+NC	수상실
+NC	수소 충전소
+NC	수소충전소
+NC	수영장
+NC	수족관
+NC	숙소
+NC	순상 화산
+NC	순상화산
+NC	순환 고속 도로
+NC	순환 고속도로
+NC	순환 도로
+NC	순환고속도로
+NC	순환도로
+NC	숲
+NC	슈퍼 센터
+NC	슈퍼 화산
+NC	슈퍼센터
+NC	슈퍼화산
+NC	스노 브리지
+NC	스노브 리지
+NC	스노브리지
+NC	스노우 브리지
+NC	스노우브리지
+NC	스쿨
+NC	스퀘어
+NC	스키장
+NC	스타디움
+NC	스테이션
+NC	스테이지
+NC	스테이트
+NC	스튜디오
+NC	스트리트
+NC	스트릿
+NC	슬럼
+NC	습곡 산맥
+NC	습곡산맥
+NC	시계탑
+NC	시골
+NC	시군
+NC	시내
+NC	시네마 테크
+NC	시네마테크
+NC	시립 미술관
+NC	시립미술관
+NC	시민 광장
+NC	시민광장
+NC	시성
+NC	시장
+NC	시청
+NC	시티
+NC	식당
+NC	신도시
+NC	신사옥
+NC	신혼집
+NC	실내
+NC	실내 경기장
+NC	실내 수영장
+NC	실내 체육관
+NC	실내경기장
+NC	실내수영장
+NC	실내체육관
+NC	실외
+NC	실주소
+NC	실험실
+NC	쓰레기장
+NC	씨어터
+NC	아래쪽
+NC	아지트
+NC	아침 시장
+NC	아침시장
+NC	아쿠아 리움
+NC	아쿠아리움
+NC	아트 센터
+NC	아트센터
+NC	아트홀
+NC	아티스트 갤러리
+NC	아티스트갤러리
+NC	아파트
+NC	안경원
+NC	안방 극장
+NC	안방극장
+NC	암벽장
+NC	앞부분
+NC	앞자리
+NC	애견 호텔
+NC	애견샵
+NC	애견호텔
+NC	야구장
+NC	야시장
+NC	야영장
+NC	야외
+NC	야외 극장
+NC	야외극장
+NC	양로원
+NC	양식장
+NC	양조장
+NC	양지
+NC	언덕
+NC	얼음 화산
+NC	얼음화산
+NC	여울
+NC	여행지
+NC	역내
+NC	역사 박물관
+NC	역사박물관
+NC	연구 센터
+NC	연구센터
+NC	연구실
+NC	연합 공국
+NC	연합공국
+NC	열대 지방
+NC	열대우림
+NC	열대지방
+NC	영어 마을
+NC	영어권
+NC	영어마을
+NC	영웅 도시
+NC	영웅도시
+NC	영화관
+NC	옆집
+NC	예식장
+NC	예정지
+NC	오락실
+NC	오름
+NC	오아시스
+NC	오페라 극장
+NC	오페라극장
+NC	오피스텔
+NC	옥상
+NC	옥외
+NC	옥포
+NC	온대 지방
+NC	온대지방
+NC	온천
+NC	온천 마을
+NC	온천마을
+NC	왕궁
+NC	외곽
+NC	욕실
+NC	우리집
+NC	우물
+NC	우성 아파트
+NC	우성아 파트
+NC	우성아파트
+NC	우주 공간
+NC	우주 공항
+NC	우주공간
+NC	우체통
+NC	운동 공원
+NC	운동공원
+NC	운동장
+NC	운전석
+NC	원룸
+NC	원자력 발전소
+NC	원자력발전소
+NC	원자로
+NC	원전
+NC	원형 경기장
+NC	원형 극장
+NC	원형경기장
+NC	원형극장
+NC	웨딩 스튜디오
+NC	웨딩스튜디오
+NC	웨딩홀
+NC	웨스트
+NC	위성 도시
+NC	위성도시
+NC	위층
+NC	유령 도시
+NC	유령도시
+NC	유료 도로
+NC	유료도로
+NC	유비쿼터스 도시
+NC	유비쿼터스도시
+NC	유스 타운
+NC	유스타운
+NC	유적박물관
+NC	유적지
+NC	유통 센터
+NC	유통센터
+NC	육지
+NC	은신처
+NC	은하
+NC	은하계
+NC	응급실
+NC	의료원
+NC	이국
+NC	이발소
+NC	이적 시장
+NC	이적시장
+NC	인공 암벽장
+NC	인공섬
+NC	인공암벽장
+NC	임대 아파트
+NC	임대아파트
+NC	입구
+NC	입학처
+NC	자매 결연 도시
+NC	자매 도시
+NC	자매결연 도시
+NC	자매결연도시
+NC	자매도시
+NC	자연사박물관
+NC	자연요양소
+NC	자유 공간
+NC	자유 광장
+NC	자유 제국 도시
+NC	자유 제국도시
+NC	자유공간
+NC	자유광장
+NC	자유제국도시
+NC	자치도
+NC	자택
+NC	작업장
+NC	작은 도시
+NC	작은도시
+NC	장례 식장
+NC	장례식장
+NC	장터
+NC	재래 시장
+NC	재래시장
+NC	저수지
+NC	저장소
+NC	저택
+NC	적진
+NC	전문점
+NC	전산실
+NC	전세계
+NC	전시실
+NC	전용 경기장
+NC	전용경기장
+NC	전원 도시
+NC	전원도시
+NC	전장
+NC	전통 시장
+NC	전통시장
+NC	점포
+NC	정글
+NC	정류장
+NC	정자
+NC	조력 발전소
+NC	조력발전소
+NC	조선소
+NC	종점
+NC	종착역
+NC	종합 경기장
+NC	종합경기장
+NC	좌판
+NC	주거 지역
+NC	주거지역
+NC	주민 센터
+NC	주민센터
+NC	주방
+NC	주변
+NC	주유소
+NC	주택가
+NC	중남부 지방
+NC	중남부지방
+NC	중동부 지방
+NC	중동부지방
+NC	중부 지방
+NC	중부지방
+NC	중북부 지방
+NC	중북부지방
+NC	중서부 지방
+NC	중서부지방
+NC	중소 도시
+NC	중소도시
+NC	중심 공항
+NC	중심 업무 지구
+NC	중심가
+NC	중심공항
+NC	중심업무지구
+NC	지구
+NC	지구상
+NC	지뢰밭
+NC	지름길
+NC	지역구
+NC	지하
+NC	지하 공간
+NC	지하 상가
+NC	지하 차도
+NC	지하공간
+NC	지하도
+NC	지하상가
+NC	지하실
+NC	지하차도
+NC	지하철역
+NC	직매장
+NC	직장
+NC	진리부
+NC	진흙 화산
+NC	진흙화산
+NC	집안
+NC	찜질방
+NC	차량 기지
+NC	차량기지
+NC	창가
+NC	창고
+NC	창구
+NC	창밖
+NC	창조 도시
+NC	창조도시
+NC	창해
+NC	처방실
+NC	철도역
+NC	청사
+NC	체육관
+NC	초소
+NC	초원
+NC	초화산
+NC	총본산
+NC	촬영 현장
+NC	촬영장
+NC	촬영현장
+NC	축구 경기장
+NC	축구 전용 경기장
+NC	축구 전용 구장
+NC	축구 전용경기장
+NC	축구 전용구장
+NC	축구경기장
+NC	축구장
+NC	축구전용경기장
+NC	축구전용구장
+NC	충전소
+NC	친정
+NC	침상 도시
+NC	침상도시
+NC	침실
+NC	카지노
+NC	캠퍼스
+NC	캠프장
+NC	캠핑장
+NC	컨벤션센터
+NC	컨츄리 클럽
+NC	컨츄리클럽
+NC	컨퍼런스 센터
+NC	컨퍼런스센터
+NC	케이블카
+NC	콘서트장
+NC	콘퍼런스 센터
+NC	콘퍼런스센터
+NC	콜센터
+NC	크리스마스 시장
+NC	크리스마스시장
+NC	타는곳
+NC	타운
+NC	탐방로
+NC	터미널
+NC	텃밭
+NC	테라스
+NC	테마 도로
+NC	테마 로드
+NC	테마 파크
+NC	테마도로
+NC	테마로드
+NC	테마파크
+NC	텔레비전 스튜디오
+NC	텔레비전스튜디오
+NC	텔레폰 클럽
+NC	텔레폰클럽
+NC	템플
+NC	투기 지역
+NC	투기지역
+NC	트윈 타워
+NC	트윈타워
+NC	파도풀
+NC	파우더룸
+NC	파크
+NC	팩토리
+NC	펜스
+NC	폐쇄 도시
+NC	폐쇄도시
+NC	폐차장
+NC	포구
+NC	포토 갤러리
+NC	포토 스튜디오
+NC	포토갤러리
+NC	포토스튜디오
+NC	폭포
+NC	프론트
+NC	프리미엄 아울렛
+NC	프리미엄아울렛
+NC	피부 관리실
+NC	피부관리실
+NC	피트 니스 센터
+NC	피트니스 센터
+NC	피트니스센터
+NC	필드
+NC	하늘
+NC	하늘 정원
+NC	하늘정원
+NC	하단
+NC	하방
+NC	하위
+NC	학교 식당
+NC	학교도서관
+NC	학교식당
+NC	학술 도시
+NC	학술도시
+NC	학원가
+NC	한국 시장
+NC	한국 타운
+NC	한국시장
+NC	한국타운
+NC	한인 타운
+NC	한인타운
+NC	할렘가
+NC	할인 매장
+NC	할인매장
+NC	할인점
+NC	핫래버러토리
+NC	항구
+NC	해군 기지
+NC	해군기지
+NC	해변
+NC	해안 산맥
+NC	해안산맥
+NC	해외
+NC	핵 발전소
+NC	핵발전소
+NC	행사장
+NC	행성
+NC	행정 구역
+NC	행정 도시
+NC	행정 복합 도시
+NC	행정 중심 복합 도시
+NC	행정구역
+NC	행정도시
+NC	행정복합도시
+NC	행정중심 복합도시
+NC	행정중심복합도시
+NC	허브 공항
+NC	허브공항
+NC	헤븐
+NC	혁신 도시
+NC	혁신도시
+NC	현관
+NC	현장
+NC	협곡
+NC	호프
+NC	홀
+NC	홈 네이션
+NC	홈구장
+NC	홈네이션
+NC	홍대 맛집
+NC	홍대맛집
+NC	홍보실
+NC	화산섬
+NC	화원
+NC	화장실
+NC	활주로
+NC	회관
+NC	횟집
+NC	후보지
+NC	훈련 센터
+NC	훈련센터
+NC	휴게소
+NC	고원
+NC	동굴
+NC	묘지
+NC	반도
+NC	콜 센터
+NC	미궁
+NC	회당
+NC	아름다운 곳
+NC	아름다운곳
+NC	내리막길
+NC	빈민가
+NC	중도
+NC	감자농장
+NC	감자밭
+NC	강변 식당
+NC	강변식당
+NC	개울가 식당
+NC	개울가식당
+NC	구내식당
+NC	국수촌
+NC	극장가
+NC	금광
+NC	넝쿨숲
+NC	다 락
+NC	다공간
+NC	당구장
+NC	돌산
+NC	동방
+NC	등대
+NC	떡가게
+NC	랜드마크
+NC	매점
+NC	명품사
+NC	뮤지엄
+NC	밥집
+NC	버스존
+NC	본가점
+NC	산지
+NC	살림원
+NC	서남해
+NC	서신
+NC	서한
+NC	섬오름
+NC	성도
+NC	성안
+NC	신전
+NC	아고라
+NC	열방
+NC	영전
+NC	일터
+NC	자료원
+NC	전방
+NC	전우사
+NC	죽림
+NC	중앙은행
+NC	창공
+NC	창업터
+NC	천산
+NC	천지산
+NC	초암
+NC	커피밭
+NC	켐프
+NC	큰집
+NC	태안
+NC	툰드라
+NC	팔도
+NC	풍산
+NC	강연실
+NC	바닷길
+NC	방주
+NC	주재관
+NC	지상
+NC	왕국
+NC	게이클럽
+NC	게이 클럽
+NC	담양펜션
+NC	담양 펜션
+NC	종가집
+NC	산
+NC	불펜
+NC	고담
+NC	국경
+NC	도성
+NC	리버
+NC	빙우
+NC	여인숙
+NC	옥타곤
+NC	지중해
+NC	타워
+NC	폐가
+NC	감자 농장
+NC	구내 식당
+NC	랜드 마크
+NC	선술집
+NC	시골집
+NC	양식집
+NC	이웃집
+NC	이층집
+NC	작은집
+NC	주인집
+NC	초가집
+NC	커피집
+NC	판자집
+NC	하숙집
+NC	기와집
+NC	부스
+NC	주차장
+NC	화장실
+NC	고개
+NC	숙소
+NC	건물
+NC	수영장
+NC	식당
+NC	주변
+NC	입구
+NC	직장
+NC	해외
+NC	현장
+NC	바닥
+NC	강
+NC	출구
+NC	전국
+NC	샤워실
+NC	풀빌라
+NC	라운지
+NC	드라마세트장
+NC	음악분수
+NC	드라마 세트장
+NC	다운타운
+NC	다운 타운
+NC	테마가든
+NC	테마 가든
+NC	근무지
+NC	거실
+NC	개인룸
+NC	기차역
+NC	간이역
+NC	철길
+NC	카페 테라스
+NC	카페테라스
+NC	가구점
+NC	가맹점
+NC	노점
+NC	대리점
+NC	대여점
+NC	면세점
+NC	백화점
+NC	음식점
+NC	주점
+NC	직영점
+NC	판매점
+NC	공항면세점
+NC	커피전문점
+NC	편의점
+NC	문구점
+NC	잡화점
+NC	팬시점
+NC	공항 면세점
+NC	커피 전문점
+NC	대형할인점
+NC	간이주점
+NC	간이 주점
+NC	대중음식점
+NC	대중 음식점
+NC	보험대리점
+NC	보험 대리점
+NC	온라인 서점
+NC	온라인서점
+NC	가게
+NC	뷔페
+NC	한식뷔페
+NC	한식 뷔페
+NC	분식
+NC	테마카페
+NC	테마 카페
+NC	포차
+NC	포장마차
+NC	포장 마차
+NC	레스토랑
