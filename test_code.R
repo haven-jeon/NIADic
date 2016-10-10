@@ -9,3 +9,9 @@ a <- read.table("NIADic/inst/dics/ext/verb.tsv", sep='\t', fileEncoding='UTF-8',
 a <- fread("NIADic/inst/dics/people_general.tsv",sep='\t',encoding='UTF-8', header=F)
 
 unzip("NIADic/inst/dics/dics.zip",list=F, exdir="NIADic/inst/dics/ext")
+
+
+install_github('haven-jeon/NIADic/NIADic')
+
+file.path(system.file(package="NIADic"), "dics", "dics.zip")
+
