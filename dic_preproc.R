@@ -130,15 +130,138 @@ total <- rbind(brand_name,
                place_name,
                place_general,
                verb,
-               etc)
+               etc, special) # general_tag_collect.tsv
 
 
 total[, term:=str_replace_all(term, pattern="[:blank:]", replacement="")]
 
-
 unique(total)
 
 write.table(unique(total),file="total.tsv",sep="\t",col.names=F,fileEncoding="UTF-8",row.names=F)
+
+
+#개별 사전 저장
+brand_name[, term_trimed:=str_replace_all(term, pattern="[:blank:]", replacement="")]
+
+write.table(brand_name, file="NIADic/inst/dics/brand_name_raw.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F,quote=F, eol="\n")
+
+write.table(unique(brand_name[,.(term_trimed,tag)]),
+            file="NIADic/inst/dics/brand_name.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F, quote=F, eol="\n")
+
+
+
+
+
+general_prod[, term_trimed:=str_replace_all(term, pattern="[:blank:]", replacement="")]
+
+write.table(general_prod, file="NIADic/inst/dics/general_product_raw.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F,quote=F, eol="\n")
+
+write.table(unique(general_prod[,.(term_trimed,tag)]),
+            file="NIADic/inst/dics/general_product.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F, quote=F, eol="\n")
+
+
+
+
+
+people_name[, term_trimed:=str_replace_all(term, pattern="[:blank:]", replacement="")]
+
+write.table(people_name, file="NIADic/inst/dics/people_names_raw.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F,quote=F, eol="\n")
+
+write.table(unique(people_name[,.(term_trimed,tag)]),
+            file="NIADic/inst/dics/people_names.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F, quote=F, eol="\n")
+
+
+
+
+
+people_general[, term_trimed:=str_replace_all(term, pattern="[:blank:]", replacement="")]
+
+write.table(people_general, file="NIADic/inst/dics/people_general_raw.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F,quote=F, eol="\n")
+
+write.table(unique(people_general[,.(term_trimed,tag)]),
+            file="NIADic/inst/dics/people_general.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8" ,row.names=F, quote=F, eol="\n")
+
+
+
+
+proper_noun[, term_trimed:=str_replace_all(term, pattern="[:blank:]", replacement="")]
+
+write.table(proper_noun, file="NIADic/inst/dics/proper_noun_raw.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F,quote=F, eol="\n")
+
+write.table(unique(proper_noun[,.(term_trimed,tag)]),
+            file="NIADic/inst/dics/proper_noun.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F, quote=F, eol="\n")
+
+
+
+place_name[, term_trimed:=str_replace_all(term, pattern="[:blank:]", replacement="")]
+
+write.table(place_name, file="NIADic/inst/dics/place_name_raw.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F,quote=F, eol="\n")
+
+write.table(unique(place_name[,.(term_trimed,tag)]),
+            file="NIADic/inst/dics/place_name.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F, quote=F, eol="\n")
+
+
+
+
+place_general[, term_trimed:=str_replace_all(term, pattern="[:blank:]", replacement="")]
+
+write.table(place_general, file="NIADic/inst/dics/place_general_raw.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F,quote=F, eol="\n")
+
+write.table(unique(place_general[,.(term_trimed,tag)]),
+            file="NIADic/inst/dics/place_general.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F, quote=F, eol="\n")
+
+
+
+
+
+
+verb[, term_trimed:=str_replace_all(term, pattern="[:blank:]", replacement="")]
+
+write.table(verb, file="NIADic/inst/dics/verb_raw.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F,quote=F, eol="\n")
+
+write.table(unique(verb[,.(term_trimed,tag)]),
+            file="NIADic/inst/dics/verb.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F, quote=F, eol="\n")
+
+
+
+etc[, term_trimed:=str_replace_all(term, pattern="[:blank:]", replacement="")]
+
+write.table(etc, file="NIADic/inst/dics/general_tag_collect_raw.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F,quote=F, eol="\n")
+
+write.table(unique(etc[,.(term_trimed,tag)]),
+            file="NIADic/inst/dics/general_tag_collect.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F, quote=F, eol="\n")
+
+
+
+
+
+special[, term_trimed:=str_replace_all(term, pattern="[:blank:]", replacement="")]
+
+write.table(special, file="NIADic/inst/dics/special_characters_raw.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F,quote=F, eol="\n")
+
+write.table(unique(special[,.(term_trimed,tag)]),
+            file="NIADic/inst/dics/special_characters.tsv",sep="\t",col.names=F,
+            fileEncoding="UTF-8",row.names=F, quote=F,eol="\n")
+
 
 
 
