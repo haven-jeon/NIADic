@@ -15,6 +15,9 @@ To install from GitHub, use
     install_github('haven-jeon/NIADic/NIADic')
 
 
+We will provide this package from [NIA package repository]() after development.
+
+
 [konlp]:http://cran.r-project.org/web/packages/KoNLP/index.html
 
 
