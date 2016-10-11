@@ -6,14 +6,14 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, message=F, warning=F)
 options(stringsAsFactors = FALSE)
 ```
 
 ## NIA 사전 통계 정보 
 
 
-### 품사별 단어 갯수
+### 전체 사전 품사별 단어 통계량 
 
 * 중복 단어 제거 
   + 예) sk 텔레콤, sk텔레콤... 
@@ -43,7 +43,6 @@ proper_noun <- read.table("NIADic/inst/dics/proper_noun.tsv", sep='\t', fileEnco
 
 
 place_name <- read.table("NIADic/inst/dics/place_name.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
-
 
 
 place_general <- read.table("NIADic/inst/dics/place_general.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
@@ -84,5 +83,148 @@ tag_cnts[,percent:=N/sum(N) * 100]
 
 knitr::kable(tag_cnts[order(-percent)])
 ```
+
+## 각 세그먼트별 통계량 
+
+### 브랜드명 
+
+```{r}
+setnames(brand_name, c('term', 'tag'))
+
+br_nm <- brand_name %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
+
+br_nm_cnt <- br_nm[,.N,h_tag]
+
+knitr::kable(br_nm_cnt[,.(h_tag, cnt=N, percentage=N/sum(N) * 100)])
+```
+
+
+### 일반상품 
+
+
+```{r}
+setnames(general_product, c('term', 'tag'))
+
+pr_nm <- general_product %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
+
+pr_nm_cnt <- pr_nm[,.N,h_tag]
+
+knitr::kable(pr_nm_cnt[,.(h_tag, cnt=N, percentage=N/sum(N) * 100)])
+
+```
+
+
+### 인물-이름 
+
+
+```{r}
+setnames(people_names, c('term', 'tag'))
+
+pe_nm <- people_names %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
+
+pe_nm_cnt <- pe_nm[,.N,h_tag]
+
+knitr::kable(pe_nm_cnt[,.(h_tag, cnt=N, percentage=N/sum(N) * 100)])
+
+```
+
+### 인물,일반
+
+```{r}
+setnames(people_general, c('term', 'tag'))
+
+pe_g_nm <- people_general %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
+
+pe_g_nm_cnt <- pe_g_nm[,.N,h_tag]
+
+knitr::kable(pe_g_nm_cnt[,.(h_tag, cnt=N, percentage=N/sum(N) * 100)])
+
+```
+
+
+### 고유명사 
+
+```{r}
+setnames(proper_noun, c('term', 'tag'))
+
+pr_noun_nm <- proper_noun %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
+
+pr_noun_nm_cnt <- pr_noun_nm[,.N,h_tag]
+
+knitr::kable(pr_noun_nm_cnt[,.(h_tag, cnt=N, percentage=N/sum(N) * 100)])
+
+```
+
+
+
+### 장소-지명 
+
+```{r}
+setnames(place_name, c('term', 'tag'))
+
+pl_nm <- place_name %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
+
+pl_nm_cnt <- pl_nm[,.N,h_tag]
+
+knitr::kable(pl_nm_cnt[,.(h_tag, cnt=N, percentage=N/sum(N) * 100)])
+```
+
+
+### 장소-일반 
+
+```{r}
+setnames(place_general, c('term', 'tag'))
+
+pl_gn <- place_general %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
+
+pl_gn_cnt <- pl_gn[,.N,h_tag]
+
+knitr::kable(pl_gn_cnt[,.(h_tag, cnt=N, percentage=N/sum(N) * 100)])
+
+```
+
+
+### 동사 
+
+```{r}
+setnames(verb, c('term', 'tag'))
+
+verb_ <- verb %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
+
+verb_cnt <- verb_[,.N,h_tag]
+
+knitr::kable(verb_cnt[,.(h_tag, cnt=N, percentage=N/sum(N) * 100)])
+```
+
+
+### 일반(품사모음)
+
+
+
+```{r}
+setnames(general_tag_collect, c('term', 'tag'))
+
+general_tag_collect_ <- general_tag_collect %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
+
+general_tag_collect_cnt <- general_tag_collect_[,.N,h_tag]
+
+knitr::kable(general_tag_collect_cnt[,.(h_tag, cnt=N, percentage=N/sum(N) * 100)][order(-cnt)])
+
+```
+
+
+### 특수문자
+
+```{r}
+setnames(special_characters, c('term', 'tag'))
+
+special_characters_ <- special_characters %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
+
+special_characters_cnt <- special_characters_[,.N,h_tag]
+
+knitr::kable(special_characters_cnt[,.(h_tag, cnt=N, percentage=N/sum(N) * 100)][order(-cnt)])
+```
+
+
 
 
