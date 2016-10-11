@@ -18,7 +18,7 @@ options(stringsAsFactors = FALSE)
 * 중복 단어 제거 
   + 예) sk 텔레콤, sk텔레콤... 
 
-```{r, message=F, warning=F}
+```{r, message=F, warning=F, echo=FALSE}
 library(data.table)
 library(ggplot2)
 library(dplyr)
