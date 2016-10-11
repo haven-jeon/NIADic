@@ -1,0 +1,88 @@
+---
+title: "사전 정보"
+author: "전희원"
+date: "2016년 10월 11일"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(stringsAsFactors = FALSE)
+```
+
+## NIA 사전 통계 정보 
+
+
+### 품사별 단어 갯수
+
+* 중복 단어 제거 
+  + 예) sk 텔레콤, sk텔레콤... 
+
+```{r, message=F, warning=F}
+library(data.table)
+library(ggplot2)
+library(dplyr)
+
+
+verb <- read.table("NIADic/inst/dics/verb.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+
+brand_name <- read.table("NIADic/inst/dics/brand_name.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+
+
+general_product <- read.table("NIADic/inst/dics/general_product.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+
+
+people_names <- read.table("NIADic/inst/dics/people_names.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+
+
+people_general <- read.table("NIADic/inst/dics/people_general.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+
+
+proper_noun <- read.table("NIADic/inst/dics/proper_noun.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+
+
+
+place_name <- read.table("NIADic/inst/dics/place_name.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+
+
+
+place_general <- read.table("NIADic/inst/dics/place_general.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+
+
+
+general_tag_collect <- read.table("NIADic/inst/dics/general_tag_collect.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+
+
+
+special_characters <- read.table("NIADic/inst/dics/special_characters.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+
+
+one_dic <- rbind(verb, brand_name, general_product, people_names, people_general, proper_noun, place_name, place_general, general_tag_collect, special_characters)
+
+
+one_dic <- one_dic %>% data.table
+
+
+tag_to_hangul <- data.frame(
+tag=c('nc', 'pv', 'ma', 'ec', 'ef', 'ii','jc', 'nn', 'nb', 'mm', 'et', 'np', 'f', 'sy', 'xs', 'ep', 'jx', 'sp', 'sf', 'su', 'sd'), 
+h_tag=c('보통명사', '동사', '부사', '연결어미', '종결어미', '감탄사', '격조사', '수사', '의존명사', '관형사', '전성어미', '대명사', '외국어', '기타기호', '접미사', '선어말어미', '보조사', '쉼표', '여는 따옴표 또는 묶음표', '단위기호', '이음표'))
+
+
+
+dic_stat <- one_dic[,.N,.(tag=V2)][order(-N)] %>% inner_join(tag_to_hangul, by='tag')
+
+ggplot(dic_stat, aes(reorder(h_tag, -N), N)) + geom_bar(stat='identity') + theme(axis.text.x=element_text(angle=45))
+
+setnames(one_dic,c("term",'tag'))
+
+j_one_dic <- one_dic %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
+
+tag_cnts <- j_one_dic[,.N,h_tag]
+
+tag_cnts[,percent:=N/sum(N) * 100]
+
+
+knitr::kable(tag_cnts[order(-percent)])
+```
+
+

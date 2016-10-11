@@ -7,7 +7,7 @@ library(readxl)
 
 library(readxl)
 
-brand_name <- read_excel("사전.xlsx",sheet=1, col_names=T)
+brand_name <- read_excel("dic_raw.xlsx",sheet=1, col_names=T)
 
 brand_name <- brand_name %>% data.table
 
@@ -23,7 +23,7 @@ brand_name <- na.omit(brand_name[,.(term,tag)])
 
 
 
-general_prod <- read_excel("사전.xlsx",sheet=2, col_names=T) %>% data.table
+general_prod <- read_excel("dic_raw.xlsx",sheet=2, col_names=T) %>% data.table
 
 general_prod[,1:2, with=F]
 
@@ -34,7 +34,7 @@ general_prod[,term:=str_trim(str_to_lower(`단어`))]
 general_prod <- na.omit(general_prod[,.(term,tag)])
 
 
-people_name <- read_excel("사전.xlsx",sheet=3, col_names=T) %>% data.table
+people_name <- read_excel("dic_raw.xlsx",sheet=3, col_names=T) %>% data.table
 
 people_name[,1:2, with=F]
 
@@ -46,7 +46,7 @@ people_name <- na.omit(people_name[,.(term,tag)])
 
 
 
-people_general <- read_excel("사전.xlsx",sheet=4, col_names=T) %>% data.table
+people_general <- read_excel("dic_raw.xlsx",sheet=4, col_names=T) %>% data.table
 
 people_general[,1:2, with=F]
 
@@ -57,7 +57,7 @@ people_general[,term:=str_trim(str_to_lower(`단어`))]
 people_general <- na.omit(people_general[,.(term,tag)])
 
 
-proper_noun <- read_excel("사전.xlsx",sheet=5, col_names=T) %>% data.table
+proper_noun <- read_excel("dic_raw.xlsx",sheet=5, col_names=T) %>% data.table
 
 proper_noun[,1:2, with=F]
 
@@ -68,7 +68,7 @@ proper_noun[,term:=str_trim(str_to_lower(`단어`))]
 proper_noun <- na.omit(proper_noun[,.(term,tag)])
 
 
-place_name <- read_excel("사전.xlsx",sheet=6, col_names=T) %>% data.table
+place_name <- read_excel("dic_raw.xlsx",sheet=6, col_names=T) %>% data.table
 
 place_name[,1:2, with=F]
 
@@ -79,7 +79,7 @@ place_name[,term:=str_trim(str_to_lower(`단어`))]
 place_name <- na.omit(place_name[,.(term,tag)])
 
 
-place_general <- read_excel("사전.xlsx",sheet=7, col_names=T) %>% data.table
+place_general <- read_excel("dic_raw.xlsx",sheet=7, col_names=T) %>% data.table
 
 place_general[,1:2, with=F]
 
@@ -90,7 +90,7 @@ place_general[,term:=str_trim(str_to_lower(`단어`))]
 place_general <- na.omit(place_general[,.(term,tag)])
 
 
-verb <- read_excel("사전.xlsx",sheet=8, col_names=T) %>% data.table
+verb <- read_excel("dic_raw.xlsx",sheet=8, col_names=T) %>% data.table
 
 verb[,1:2, with=F]
 
@@ -101,7 +101,7 @@ verb[,term:=str_trim(str_to_lower(`단어`))]
 verb <- na.omit(verb[,.(term,tag)])
 
 
-etc <- read_excel("사전.xlsx",sheet=9, col_names=T) %>% data.table
+etc <- read_excel("dic_raw.xlsx",sheet=9, col_names=T) %>% data.table
 
 etc[,1:2, with=F]
 
@@ -111,7 +111,7 @@ etc[,term:=str_trim(str_to_lower(`단어`))]
 
 etc <- na.omit(etc[,.(term,tag)])
 
-special <- read_excel("사전.xlsx",sheet=10, col_names=T) %>% data.table
+special <- read_excel("dic_raw.xlsx",sheet=10, col_names=T) %>% data.table
 
 special[,1:2, with=F]
 
