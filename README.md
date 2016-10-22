@@ -17,9 +17,12 @@ To install from GitHub, use
 
 We will provide this package from [NIA package repository]() after development.
 
-[Dictionary status](https://htmlpreview.github.io/?https://github.com/haven-jeon/NIADic/blob/master/ni_dic_stat.html)
+- [NIA_Dic Dictionary status fro KoNLP](https://htmlpreview.github.io/?https://github.com/haven-jeon/NIADic/blob/master/ni_dic_stat.html)
 
+- [WooRiMalSam Dictionary status for KoNLP](https://htmlpreview.github.io/?https://github.com/haven-jeon/NIADic/blob/master/woorimalsam_stat.html)
+  + [About WooRiMalSam Dictionary](https://ko.wikipedia.org/wiki/%EC%9A%B0%EB%A6%AC%EB%A7%90_%EC%83%98)
 
+https://github.com/haven-jeon/NIADic/blob/master/woorimalsam_stat.html
 [konlp]:http://cran.r-project.org/web/packages/KoNLP/index.html
 
 
