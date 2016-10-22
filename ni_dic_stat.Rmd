@@ -2,7 +2,7 @@
 title: "사전 정보"
 author: "전희원"
 date: "2016년 10월 11일"
-output: html_document
+output: md_document
 ---
 
 ```{r setup, include=FALSE}

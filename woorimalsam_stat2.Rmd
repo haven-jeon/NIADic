@@ -1,0 +1,94 @@
+---
+title: "우리말샘 사전 데이터 현황"
+author: "전희원"
+date: "2016년 10월 22일"
+output: 
+  md_document:
+    variant: markdown_github
+    fig_width: 7
+    fig_height: 8
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(data.table)
+load("total_dt.RData")
+```
+
+## 우리말샘 사전 
+
+- 국립국어원에서 제공한 공개사전 
+
+```
+gogamza@GOGAMZA:/mnt/c/Users/gogamza/Documents/work/NIADic/woorimalsam_161020/utf8$ wc -l *
+   60000 OPENDICT_00.txt
+   60001 OPENDICT_01.txt
+   60001 OPENDICT_02.txt
+   60001 OPENDICT_03.txt
+   60001 OPENDICT_04.txt
+   60001 OPENDICT_05.txt
+   60001 OPENDICT_06.txt
+   60001 OPENDICT_07.txt
+   60001 OPENDICT_08.txt
+   60001 OPENDICT_09.txt
+   60001 OPENDICT_10.txt
+   60001 OPENDICT_11.txt
+   60001 OPENDICT_12.txt
+   60001 OPENDICT_13.txt
+   60001 OPENDICT_14.txt
+   60001 OPENDICT_15.txt
+   60001 OPENDICT_16.txt
+   60001 OPENDICT_17.txt
+   33541 OPENDICT_18.txt
+ 1113558 합계
+```
+
+### 전처리 작업 
+
+1. 필요 필드 추출
+  + 단어, 품사, 카테고리
+  + `readxls` 패키지의 오동작으로 인해 엑셀에서 직접 18개 파일의 필드를 추출했음  
+1. 전처리 
+  + 인코딩 변환 (`euc-kr` -> `utf-8`)
+  + 일부 옛한글과 특수문자 등  변환이 되지 않는 단어 제거
+  + 품사정보가 있는 어휘만 선택
+  + 중복단어 제거 (예, `힝힝대다(동사)` 4개 중복 존재)
+1. 품사 -> KAIST TAG 셋 변환 
+1. 1,113,558 -> `r format(nrow(total_dt),big.mark=",",scientific=FALSE)` 로 KoNLP에 적용될 건수 줄어들었음 
+
+
+### 품사/카테고리별 통계량  
+
+```{r,echo=FALSE}
+library(ggplot2)
+
+
+ggplot(total_dt[,.N,cl_tag], aes(x=reorder(cl_tag, N), N)) +geom_bar(stat='identity') + xlab("품사") + coord_flip() + ggtitle("우리말샘 사전 품사별 빈도수")
+
+
+knitr::kable(total_dt[,.N,category][order(-N)])
+
+ggplot(total_dt[category != '',.N,category], aes(x=reorder(category, N), N)) +geom_bar(stat='identity') + xlab("카테고리") + coord_flip() + ggtitle("우리말샘 사전 카테고리별 빈도수")
+
+#카테고리별 예시 
+
+knitr::kable(total_dt[category %chin% '법률'][sample(nrow(total_dt[category %chin% '법률']), 10)], caption="법률용어 예시")
+
+knitr::kable(total_dt[category %chin% '의학'][sample(nrow(total_dt[category %chin% '의학']), 10)],  caption="의학용어 예시")
+
+```
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
