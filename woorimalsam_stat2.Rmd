@@ -54,7 +54,7 @@ gogamza@GOGAMZA:/mnt/c/Users/gogamza/Documents/work/NIADic/woorimalsam_161020/ut
   + 품사정보가 있는 어휘만 선택
   + 중복단어 제거 (예, `힝힝대다(동사)` 4개 중복 존재)
 1. 품사 -> KAIST TAG 셋 변환 
-1. 1,113,558 -> `r format(nrow(total_dt),big.mark=",",scientific=FALSE)` 로 KoNLP에 적용될 건수 줄어들었음 
+1. 1,113,558 -> `r format(nrow(total_dt),big.mark=",",scientific=FALSE)` 로 적용 건수 줄어듦  
 
 
 ### 품사/카테고리별 통계량  

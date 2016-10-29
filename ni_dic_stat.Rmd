@@ -24,37 +24,38 @@ library(ggplot2)
 library(dplyr)
 
 
-verb <- read.table("NIADic/inst/dics/verb.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+verb <- read.table("NIADic/inst/dics/verb.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE,colClasses='character')
+verb$cate <- 'verb'
 
-brand_name <- read.table("NIADic/inst/dics/brand_name.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+brand_name <- read.table("NIADic/inst/dics/brand_name.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE, colClasses='character')
+brand_name$cate <- 'brand_name'
 
+general_product <- read.table("NIADic/inst/dics/general_product.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE, colClasses='character')
+general_product$cate <- 'general_product'
 
-general_product <- read.table("NIADic/inst/dics/general_product.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+people_names <- read.table("NIADic/inst/dics/people_names.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE,colClasses='character')
+people_names$cate <- 'people_names'
 
+people_general <- read.table("NIADic/inst/dics/people_general.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE, colClasses='character')
+people_general$cate <- 'people_general'
 
-people_names <- read.table("NIADic/inst/dics/people_names.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
-
-
-people_general <- read.table("NIADic/inst/dics/people_general.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
-
-
-proper_noun <- read.table("NIADic/inst/dics/proper_noun.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
-
-
-
-place_name <- read.table("NIADic/inst/dics/place_name.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+proper_noun <- read.table("NIADic/inst/dics/proper_noun.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE, colClasses='character')
+proper_noun$cate <- 'proper_noun'
 
 
-place_general <- read.table("NIADic/inst/dics/place_general.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
+place_name <- read.table("NIADic/inst/dics/place_name.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE, colClasses='character')
+place_name$cate <- 'place_name'
+
+place_general <- read.table("NIADic/inst/dics/place_general.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE, colClasses='character')
+place_general$cate <- 'place_general'
 
 
+general_tag_collect <- read.table("NIADic/inst/dics/general_tag_collect.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE, colClasses='character')
+general_tag_collect$cate <- 'general_tag_collect'
 
-general_tag_collect <- read.table("NIADic/inst/dics/general_tag_collect.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
 
-
-
-special_characters <- read.table("NIADic/inst/dics/special_characters.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE)
-
+special_characters <- read.table("NIADic/inst/dics/special_characters.tsv", sep='\t', fileEncoding='UTF-8', header=FALSE, colClasses='character')
+special_characters$cate <- 'special_characters'
 
 one_dic <- rbind(verb, brand_name, general_product, people_names, people_general, proper_noun, place_name, place_general, general_tag_collect, special_characters)
 
@@ -64,7 +65,7 @@ one_dic <- one_dic %>% data.table
 
 tag_to_hangul <- data.frame(
 tag=c('nc', 'pv', 'ma', 'ec', 'ef', 'ii','jc', 'nn', 'nb', 'mm', 'et', 'np', 'f', 'sy', 'xs', 'ep', 'jx', 'sp', 'sf', 'su', 'sd'), 
-h_tag=c('보통명사', '동사', '부사', '연결어미', '종결어미', '감탄사', '격조사', '수사', '의존명사', '관형사', '전성어미', '대명사', '외국어', '기타기호', '접미사', '선어말어미', '보조사', '쉼표', '여는 따옴표 또는 묶음표', '단위기호', '이음표'))
+h_tag=c('보통명사', '동사', '부사', '연결어미', '종결어미', '감탄사', '격조사', '수사', '의존명사', '관형사', '전성어미', '대명사', '외국어', '기타기호', '접미사', '선어말어미', '보조사', '쉼표', '여는 따옴표 또는 묶음표', '단위기호', '이음표'), stringsAsFactors=F)
 
 
 
@@ -72,7 +73,7 @@ dic_stat <- one_dic[,.N,.(tag=V2)][order(-N)] %>% inner_join(tag_to_hangul, by='
 
 ggplot(dic_stat, aes(reorder(h_tag, -N), N)) + geom_bar(stat='identity') + theme(axis.text.x=element_text(angle=45))
 
-setnames(one_dic,c("term",'tag'))
+setnames(one_dic,c("term",'tag', 'insight_cate'))
 
 j_one_dic <- one_dic %>% inner_join(data.table(tag_to_hangul), by='tag') %>% data.table
 
@@ -80,7 +81,7 @@ tag_cnts <- j_one_dic[,.N,h_tag]
 
 tag_cnts[,percent:=N/sum(N) * 100]
 
-
+save(j_one_dic, file='insighter_dic.RData')
 knitr::kable(tag_cnts[order(-percent)])
 ```
 

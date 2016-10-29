@@ -7,6 +7,7 @@ library(data.table)
 library(stringi)
 library(stringr)
 library(KoNLP)
+library(dplyr)
 
 
 opendic_00 <- read.table("woorimalsam_161020/utf8/OPENDICT_00.txt",sep='\t', header=T, colClasses='character',fileEncoding='utf-8', fill=T)
@@ -109,10 +110,70 @@ k_tag <- c("nc", "pv", "pa",  "ma",  "mm", "nc",
     "np", 'ma')
 
 
-data.table(cl_tag, k_tag)
+tag_cnv_tbl <- data.table(cl_tag, k_tag)
+
+tag_cnv_tbl[,cl_tag:=iconv(cl_tag, from='euc-kr', to='utf-8')]
+
+Encoding(tag_cnv_tbl$cl_tag) <- 'UTF-8'
+
+total_dt_kaist_tag <- total_dt %>% inner_join(tag_cnv_tbl, by="cl_tag") %>% data.table
 
 
+total_dt_kaist_tag[cl_tag %chin%  "관형사·감탄사"]
 
 
+object.size(total_dt_kaist_tag)
+
+library(RSQLite)
+
+con <- dbConnect(SQLite(), "hangul.db")
+
+dbWriteTable(con, "woorimalsam", total_dt_kaist_tag[,.(term=cl_term, tag=k_tag, category)])
+
+woorimalsam <- total_dt_kaist_tag[,.(term=cl_term, tag=k_tag, category)]
+
+dbListTables(con)
+
+dbGetQuery(con, "select * from woorimalsam limit 10")
+
+tbls <- dbGetQuery(con, iconv("select * from woorimalsam where category = '의학'", to='utf-8'))
+
+Encoding(tbls) <- 'UTF-8'
 
 
+dbDisconnect(con)
+
+
+load("insighter_dic.RData")
+
+con <- dbConnect(SQLite(), "nia_dic.db")
+
+dbWriteTable(con, "insighter", j_one_dic[,.(term,tag, in_category=insight_cate)])
+
+insighter <- j_one_dic[,.(term,tag, in_category=insight_cate)]
+
+
+dbDisconnect(con)
+
+
+dbListTables(con)
+
+Sejong <- fread("c:/Users/gogamza/Documents/work/Sejong/inst/dics/handic/data/kE/dic_user2.txt",sep='\t', encoding="UTF-8", header=F,stringsAsFactors=F)
+Sejong
+
+glimpse(Sejong)
+
+setnames(Sejong, c("term", 'tag'))
+
+dbWriteTable(con, "sejong", Sejong)
+
+dbDisconnect(con)
+
+sejong <- Sejong
+
+woorimalsam <- as.data.frame(woorimalsam)
+insighter <- as.data.frame(insighter)
+sejong <- as.data.frame(sejong)
+
+
+save(woorimalsam, insighter, sejong, file="dic.RData",compress='xz')

@@ -13,8 +13,28 @@
 #GNU General Public License for more details.
 
 
+.NIADicEnv <- new.env()
 
 
+
+#' @import RSQLite
 .onAttach <- function(libname, pkgname){
+  han_db_path <- file.path(system.file(package=pkgname), "hangul.db")
+  dic_rda_path <- file.path(system.file(package=pkgname), "dics.RData")
+  if(!file.exists(han_db_path)){
+    load(dic_rda_path)
+    #make database
+    conn <- dbConnect(SQLite(), han_db_path)
+    dbWriteTable(conn,"woorimalsam", woorimalsam)
+    dbWriteTable(conn,"insighter", insighter)
+    dbWriteTable(conn,"sejong", sejong)
+    dbDisconnect(conn)
+    rm(woorimalsam, insighter, sejong)
+  }
+
+  assign("dic_rda_path", dic_rda_path, NIADic:::.NIADicEnv)
+  assign("hangul_db_path", han_db_path, NIADic:::.NIADicEnv)
   packageStartupMessage("Successfully Loaded NIADic Package.")
 }
+
+
