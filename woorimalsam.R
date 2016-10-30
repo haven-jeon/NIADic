@@ -243,3 +243,37 @@ summary(data.table(sejong)[,nchar(term)])
 data.table(sejong)[nchar(term) >= 16]
 
 
+
+#nc -> ncn
+
+
+library(data.table)
+
+
+woorimalsam <- data.table(woorimalsam)
+insighter <- data.table(insighter)
+sejong <- data.table(sejong)
+
+
+
+woorimalsam[,.N,tag]
+
+woorimalsam[, tag:=ifelse(tag == 'pv', 'pvg',tag)]
+woorimalsam[, tag:=ifelse(tag == 'nc', 'ncn', tag)]
+woorimalsam[, tag:=ifelse(tag == 'ec', 'ecc', tag)]
+woorimalsam[, tag:=ifelse(tag == 'ma', 'mag', tag)]
+
+
+insighter[, tag:=ifelse(tag == 'pv', 'pvg',tag)]
+insighter[, tag:=ifelse(tag == 'nc', 'ncn', tag)]
+insighter[, tag:=ifelse(tag == 'ec', 'ecc', tag)]
+insighter[, tag:=ifelse(tag == 'ma', 'mag', tag)]
+
+
+
+
+insighter[,.N,tag]
+
+
+sejong[,.N,tag]
+
