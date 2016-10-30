@@ -373,7 +373,7 @@ tbl_list <- list()
 
 for(i in nm){
   res <- insighter[as.numeric(i),c('term')]
-  re <- read.delim(textConnection(res), sep='\t', header=F, stringsAsFactors=F)
+  re <- data.table(read.delim(textConnection(res), sep='\t', header=F, stringsAsFactors=F))
   if(ncol(re) != 2){
     print(i)
     next
@@ -384,16 +384,24 @@ for(i in nm){
   tbl_list[[i]] <- re
 }
 res_tbl <- rbindlist(tbl_list)
-insighter[2973601, ]
 
 res_tbl$tag <- 'ncn'
+
+insighter_cl <- insighter[nchar(insighter_cl$term) < 100,]
 
 insighter <- rbind(insighter[-c(as.numeric(nm))], data.frame(res_tbl))
 
 
+insighter <- unique(insighter_cl)
+
 
 
 insighter[str_trim(insighter$tag) == '',]$tag <- 'ncn'
+
+
+insighter <- data.frame(insighter)
+
+insighter[grepl("sebastienfoucan", x=insighter$term), ]
 
 
 
