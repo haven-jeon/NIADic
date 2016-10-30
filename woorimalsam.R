@@ -176,4 +176,4 @@ insighter <- as.data.frame(insighter)
 sejong <- as.data.frame(sejong)
 
 
-save(woorimalsam, insighter, sejong, file="dic.RData",compress='xz')
+save(woorimalsam, insighter, sejong, file="NIADic/inst/dics.RData",compress='xz')
