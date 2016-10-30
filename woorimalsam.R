@@ -208,3 +208,36 @@ woorimalsam <- as.data.frame(woorimalsam)
 save(woorimalsam, insighter, sejong, file="NIADic/inst/dics.RData",compress='xz')
 
 
+insighter <- data.table(insighter)
+
+insighter_cl <- insighter[!(term %like% '디에고로페스로드리게스')]
+
+"people_names"
+
+insighter_cl
+
+
+names(res) <- c('term', 'tag')
+
+res$in_category <- 'people_names'
+
+res$term <- as.character(res$term)
+
+res$tag <- as.character(res$tag)
+
+res[462,]$tag <- 'nc'
+tail(res)
+
+
+insighter <- rbind(insighter_cl, res)
+
+
+save(woorimalsam, insighter, sejong, file="NIADic/inst/dics.RData",compress='xz')
+
+
+summary(data.table(sejong)[,nchar(term)])
+
+
+data.table(sejong)[nchar(term) >= 16]
+
+
