@@ -270,6 +270,9 @@ woorimalsam[, tag:=ifelse(tag == 'x', 'xp', tag)]
 woorimalsam[, tag:=ifelse(tag == 'np', 'npp', tag)]
 woorimalsam[, tag:=ifelse(tag == 'mm', 'mmd', tag)]
 woorimalsam[, tag:=ifelse(tag == 'jc', 'jcs', tag)]
+woorimalsam[, tag:=ifelse(tag == 'e', 'ep', tag)]
+
+
 
 insighter[, tag:=ifelse(tag == 'pv', 'pvg',tag)]
 insighter[, tag:=ifelse(tag == 'nc', 'ncn', tag)]
