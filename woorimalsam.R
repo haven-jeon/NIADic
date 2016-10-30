@@ -232,6 +232,8 @@ tail(res)
 insighter <- rbind(insighter_cl, res)
 
 
+insighter <- as.data.frame(insighter)
+
 save(woorimalsam, insighter, sejong, file="NIADic/inst/dics.RData",compress='xz')
 
 
