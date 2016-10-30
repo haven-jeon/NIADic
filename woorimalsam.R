@@ -176,4 +176,35 @@ insighter <- as.data.frame(insighter)
 sejong <- as.data.frame(sejong)
 
 
+
+han_cate=c('','가톨릭','건설','경영','경제','고유명 일반','공업','공예','공학 일반','광업','교육','교통','군사','기계','기독교','농업','동물','매체','무용','문학','물리','미술','민속','법률','보건 일반','복식','복지','불교','사회 일반','산업 일반','생명','서비스업','수산업','수의','수학','식물','식품','심리','약학','언어','역사','연기','영상','예체능 일반','음악','의학','인명','인문 일반','임업','자연 일반','재료','전기·전자','정보·통신','정치','종교 일반','지구','지리','지명','책명','천문','천연자원','철학','체육','한의','해양','행정',
+                                         '화학',
+                                         '환경')
+
+eng_cate=c('general', 'Catholic', 'construction', 'Business', 'economic', 'proper names General', 'Industry',
+           'craft', 'Engineering General', 'mining', 'education', 'transport', 'military', 'machinery',
+           'Christian', 'Agriculture', 'animal', 'medium', 'useless',' literature ','physical ','art',
+           'folk ',' law ',' Health General ',' doubles', 'welfare', 'Buddhism', 'society in general',
+           'industry General', 'life', 'service', 'fishing', 'veterinary science', 'math', 'plant' ,'Food','hearing', 'pharmacy', 'language', 'history', 'smoke', 'video', 'The purpose of the general', 'music', 'medicine', 'life', 'Humanities General' ,'forestry', 'natural plain', 'material', 'electrical and electronic', 'information and communication', 'political', 'religion normal', 'Earth', 'Geography', 'named', 'chaekmyeong', 'astronomy', 'natural resources', 'philosophy', 'Sports', 'Han', 'Ocean',
+           'Administration', 'chemical', 'environment')
+
+
+cate_mapping <- data.table(han_cate=han_cate, eng_cate=str_trim(eng_cate))
+
+
+cate_mapping$han_cate <- iconv(cate_mapping$han_cate, to='UTF-8')
+
+
+Encoding(cate_mapping$han_cate) <- 'UTF-8'
+
+cate_mapping
+
+setnames(cate_mapping, c("han_cate"), c("category"))
+
+woorimalsam <- data.table(woorimalsam) %>% inner_join(cate_mapping, by='category') %>% data.table
+
+woorimalsam <- as.data.frame(woorimalsam)
+
 save(woorimalsam, insighter, sejong, file="NIADic/inst/dics.RData",compress='xz')
+
+
