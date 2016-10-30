@@ -267,8 +267,9 @@ woorimalsam[, tag:=ifelse(tag == 'pa', 'pad', tag)]
 woorimalsam[, tag:=ifelse(tag == 'nn', 'nnc', tag)]
 woorimalsam[, tag:=ifelse(tag == 'nb', 'nbu', tag)]
 woorimalsam[, tag:=ifelse(tag == 'x', 'xp', tag)]
-
-
+woorimalsam[, tag:=ifelse(tag == 'np', 'npp', tag)]
+woorimalsam[, tag:=ifelse(tag == 'mm', 'mmd', tag)]
+woorimalsam[, tag:=ifelse(tag == 'jc', 'jcs', tag)]
 
 insighter[, tag:=ifelse(tag == 'pv', 'pvg',tag)]
 insighter[, tag:=ifelse(tag == 'nc', 'ncn', tag)]
@@ -279,6 +280,9 @@ insighter[, tag:=ifelse(tag == 'pa', 'pad', tag)]
 insighter[, tag:=ifelse(tag == 'nn', 'nnc', tag)]
 insighter[, tag:=ifelse(tag == 'nb', 'nbu', tag)]
 insighter[, tag:=ifelse(tag == 'x', 'xp', tag)]
+insighter[, tag:=ifelse(tag == 'np', 'npp', tag)]
+insighter[, tag:=ifelse(tag == 'mm', 'mmd', tag)]
+insighter[, tag:=ifelse(tag == 'jc', 'jcs', tag)]
 
 
 insighter[,.N,tag]
