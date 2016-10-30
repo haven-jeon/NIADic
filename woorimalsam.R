@@ -404,5 +404,28 @@ insighter <- data.frame(insighter)
 insighter[grepl("sebastienfoucan", x=insighter$term), ]
 
 
+rownames(insighter[nchar(insighter$term) > 50,])
+
+insighter[insighter$term ]
+
+
+유희왕5ds
+
+insighter[grepl("윤경이네해장국", x=insighter$term),]
+
+
+
+
+insighter[insighter$tag == 'xs',]$tag <- 'xsn'
+
+
+insighter[insighter$tag == 'jx',]$tag <- 'jxc'
+
+
+insighter[insighter$tag == 'et',]$tag <- 'etn'
+
+insighter <- insighter[!grepl('\\snc\\s',insighter$term), ]
+
+
 
 
