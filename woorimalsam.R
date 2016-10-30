@@ -268,6 +268,14 @@ re$in_category <- 'brand_name'
 re$tag <- 'ncn'
 insighter <- rbind(insighter[1:151186,], insighter[151188:379876, ], re)
 
+insighter[Encoding(insighter$term) == 'unknown',]$term <- terms_u8
+
+terms_u8 <- iconv(terms, to='utf-8')
+
+
+Encoding(terms_u8) <- 'UTF-8'
+tail(re)
+
 woorimalsam[,.N,tag]
 
 woorimalsam[, tag:=ifelse(tag == 'pv', 'pvg',tag)]
