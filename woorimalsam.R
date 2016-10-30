@@ -270,6 +270,10 @@ insighter <- rbind(insighter[1:151186,], insighter[151188:379876, ], re)
 
 insighter[Encoding(insighter$term) == 'unknown',]$term <- terms_u8
 
+library(stringi)
+
+insighter$term <-stri_trans_nfkc(insighter$term)
+
 terms_u8 <- iconv(terms, to='utf-8')
 
 
@@ -312,4 +316,85 @@ insighter[,.N,tag]
 
 
 sejong[,.N,tag]
+
+
+res <- insighter[160161,c('term')]
+
+re <- read.delim(textConnection(res), sep='\t', header=F, stringsAsFactors=F)
+
+names(re) <- c('term', 'tag')
+re$in_category <- 'brand_name'
+
+
+head(re)
+
+insighter <- rbind(insighter[1:160160,], re, insighter[160162:485169,])
+
+
+
+insighter <- data.frame(insighter)
+
+insighter[grepl("xgirlz", x=insighter$term),]
+
+res <- insighter[291398,c('term')]
+
+
+
+re <- read.delim(textConnection(res), sep='\t', header=F, stringsAsFactors=F)
+
+names(re) <- c('term', 'tag')
+re$in_category <- 'people_names'
+
+head(re)
+
+insighter <- rbind(insighter[1:291397,], re, insighter[291399:508808,])
+
+insighter$tag <- ifelse(insighter$tag == 'nc', 'ncn',insighter$tag )
+
+oldirtybastard
+
+insighter[grepl("oldirtybastard", x=insighter$term),]
+
+
+res <- insighter[2971691,c('term')]
+
+re <- read.delim(textConnection(res), sep='\t', header=F, stringsAsFactors=F)
+
+names(re) <- c('term', 'tag')
+re$in_category <- 'people_names'
+
+
+
+
+nm <- rownames(insighter[nchar(insighter$term) > 100,])
+
+
+tbl_list <- list()
+
+for(i in nm){
+  res <- insighter[as.numeric(i),c('term')]
+  re <- read.delim(textConnection(res), sep='\t', header=F, stringsAsFactors=F)
+  if(ncol(re) != 2){
+    print(i)
+    next
+  }
+  names(re) <- c('term', 'tag')
+
+  re$in_category <- insighter[as.numeric(i) + 1,c('in_category')]
+  tbl_list[[i]] <- re
+}
+res_tbl <- rbindlist(tbl_list)
+insighter[2973601, ]
+
+res_tbl$tag <- 'ncn'
+
+insighter <- rbind(insighter[-c(as.numeric(nm))], data.frame(res_tbl))
+
+
+
+
+insighter[str_trim(insighter$tag) == '',]$tag <- 'ncn'
+
+
+
 
