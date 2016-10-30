@@ -7,7 +7,7 @@ Maintainer: Heewon Jeon <madjakarta@gmail.com>
 Description: This dictionary for..
 Encoding: UTF-8
 Depends:
-     R (>= 3.1.2)
+     R (>= 3.3.1)
 Imports:
      RSQLite (>= 1.0.0)
 License: GPL-3
