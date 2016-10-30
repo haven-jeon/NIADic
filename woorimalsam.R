@@ -256,6 +256,18 @@ sejong <- data.table(sejong)
 
 
 
+insighter <- data.frame(insighter)
+
+insighter[insighter$term == 'imm네트웍스', ]
+res <- insighter[151187,c('term')]
+nchar(res)
+re <- read.delim(textConnection(res), sep='\t', header=F, stringsAsFactors=F)
+
+names(re) <- c('term', 'tag')
+re$in_category <- 'brand_name'
+re$tag <- 'ncn'
+insighter <- rbind(insighter[1:151186,], insighter[151188:379876, ], re)
+
 woorimalsam[,.N,tag]
 
 woorimalsam[, tag:=ifelse(tag == 'pv', 'pvg',tag)]
