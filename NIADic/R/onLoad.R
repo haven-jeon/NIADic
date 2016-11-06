@@ -1,6 +1,6 @@
 #Copyright 2016 Heewon Jeon(madjakarta@gmail.com)
 #
-#This file is part of NIADic.
+#This file is part of NIAdic.
 #
 #NIADic is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@
 
   assign("dic_rda_path", dic_rda_path, NIADic:::.NIADicEnv)
   assign("hangul_db_path", han_db_path, NIADic:::.NIADicEnv)
-  packageStartupMessage("Successfully Loaded NIADic Package.")
+  packageStartupMessage("Successfully Loaded NIAdic Package.")
 }
 
 
