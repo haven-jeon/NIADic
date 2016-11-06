@@ -205,7 +205,7 @@ woorimalsam <- data.table(woorimalsam) %>% inner_join(cate_mapping, by='category
 
 woorimalsam <- as.data.frame(woorimalsam)
 
-save(woorimalsam, insighter, sejong, file="NIADic/inst/dics.RData",compress='xz')
+save(woorimalsam, insighter, sejong, file="inst/dics.RData",compress='xz')
 
 
 insighter <- data.table(insighter)

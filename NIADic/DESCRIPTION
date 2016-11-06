@@ -13,5 +13,8 @@ Imports:
 License: GPL-3
 RoxygenNote: 5.0.1
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    scales,
+    data.table,
+    ggplot2
 VignetteBuilder: knitr

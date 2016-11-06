@@ -2,12 +2,12 @@
 #
 #This file is part of NIAdic.
 #
-#NIADic is free software: you can redistribute it and/or modify
+#NIAdic is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
 #(at your option) any later version.
 
-#NIADic is distributed in the hope that it will be useful,
+#NIAdic is distributed in the hope that it will be useful,
 #but WITHOUT ANY WARRANTY; without even the implied warranty of
 #MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #GNU General Public License for more details.
@@ -17,7 +17,7 @@
 
 
 
-#' @import RSQLite
+#' @importFrom RSQLite dbConnect dbWriteTable dbDisconnect SQLite
 .onAttach <- function(libname, pkgname){
   han_db_path <- file.path(system.file(package=pkgname), "hangul.db")
   dic_rda_path <- file.path(system.file(package=pkgname), "dics.RData")
@@ -25,15 +25,15 @@
     load(dic_rda_path)
     #make database
     conn <- dbConnect(SQLite(), han_db_path)
+    on.exit({dbDisconnect(conn)})
     dbWriteTable(conn,"woorimalsam", woorimalsam)
     dbWriteTable(conn,"insighter", insighter)
     dbWriteTable(conn,"sejong", sejong)
-    dbDisconnect(conn)
     rm(woorimalsam, insighter, sejong)
   }
 
-  assign("dic_rda_path", dic_rda_path, NIADic:::.NIADicEnv)
-  assign("hangul_db_path", han_db_path, NIADic:::.NIADicEnv)
+  assign("dic_rda_path", dic_rda_path, .NIADicEnv)
+  assign("hangul_db_path", han_db_path, .NIADicEnv)
   packageStartupMessage("Successfully Loaded NIAdic Package.")
 }
 
