@@ -12,7 +12,7 @@ To install from GitHub, use
 
     install.packages('devtools')
     library(devtools)
-    install_github('haven-jeon/NIADic/NIADic')
+    install_github('haven-jeon/NIADic/NIAdic')
 
 
 We will provide this package from [NIA package repository]() after development.
