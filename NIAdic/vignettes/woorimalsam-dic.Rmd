@@ -37,12 +37,12 @@ total_dt <- data.table(get_dic("woorimalsam"))
 
 ```{r,echo=FALSE}
 
-ggplot(total_dt[,.N,.(tag)], aes(x=reorder(tag, N), N)) +geom_bar(stat='identity') + xlab("KAIST 품사(tag)") + coord_flip() + ggtitle("우리말샘 사전 품사별 빈도수") + scale_y_continuous(labels = comma)
+ggplot(total_dt[,.N,.(tag)], aes(x=reorder(tag, N), N)) +geom_bar(stat='identity') + xlab("KAIST tag") + coord_flip() + ggtitle("Tag frequency") + scale_y_continuous(labels = comma)
 
 
 knitr::kable(total_dt[,.N,category][order(-N)])
 
-ggplot(total_dt[,.N,category], aes(x=reorder(category, N), N)) +geom_bar(stat='identity') + xlab("카테고리") + coord_flip() + ggtitle("우리말샘 사전 카테고리별 빈도수") +  scale_y_continuous(labels = comma)
+ggplot(total_dt[,.N,category], aes(x=reorder(category, N), N)) +geom_bar(stat='identity') + xlab("category") + coord_flip() + ggtitle("category frequency") +  scale_y_continuous(labels = comma)
 ```
 
 

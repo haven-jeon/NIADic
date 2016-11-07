@@ -28,7 +28,7 @@
 #' @import RSQLite
 get_dic <- function(dic_name){
 
-  dic_path <- get("hangul_db_path", envir=.NIADicEnv)
+  dic_path <- file.path(system.file(package='NIAdic'), "hangul.db")
   conn <- dbConnect(SQLite(), dic_path)
   on.exit({dbDisconnect(conn)})
   if(!(dic_name %in% dbListTables(conn))){
