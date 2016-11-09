@@ -1,10 +1,10 @@
 Package: NIAdic
 Type: Package
 Title: NIA(National Information Society Agency) Korean Dictionaries
-Version: 0.1.0
+Version: 0.0.1
 Author: Heewon Jeon <madjakarta@gmail.com>
 Maintainer: Heewon Jeon <madjakarta@gmail.com>
-Description: This package contains Woorimalsam and insighter dictionary. See vignettes to see datils about each dictionary.
+Description: This package contains Woorimalsam and Insighter dictionary. See vignettes to see datils about each dictionary.
 Encoding: UTF-8
 Depends:
      R (>= 3.3.1)
@@ -18,3 +18,4 @@ Suggests: knitr,
     data.table,
     ggplot2
 VignetteBuilder: knitr
+
