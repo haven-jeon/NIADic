@@ -18,7 +18,8 @@ To install from GitHub, use
 To download each dictionary with text format.
 
     install.packages('devtools')
-    devtools::install_github('haven-jeon/NIADic/NIAdic', build_vignettes = TRUE)
+    library(devtools)
+    install_github('haven-jeon/NIADic/NIAdic', build_vignettes = TRUE)
     library(NIAdic)
     woorimalsam <- get_dic('woorimalsam')
     insighter <- get_dic('insighter')
