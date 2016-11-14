@@ -18,14 +18,13 @@ To install from GitHub, use
 To download each dictionary with text format.
 
     install.packages('devtools')
-    library(devtools)
-    install_github('haven-jeon/NIADic/NIAdic', build_vignettes = TRUE)
+    devtools::install_github('haven-jeon/NIADic/NIAdic', build_vignettes = TRUE)
     library(NIAdic)
-    woorimalsam <- get_dic('woorimalsam')
-    insighter <- get_dic('insighter')
-    sejong <- get_dic('sejong')
-    
-
+    #insighter <- get_dic('insighter')
+    #sejong <- get_dic('sejong')
+    woorimal <- get_dic('woorimalsam')
+    head(woorimal)
+    write.csv(woorimal, file='woorimaldic.csv', fileEncoding='UTF-8', row.names=F)
 
 We will provide this package from [NIA package repository]() after development.
 

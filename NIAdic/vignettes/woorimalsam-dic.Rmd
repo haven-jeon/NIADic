@@ -37,6 +37,7 @@ total_dt <- data.table(get_dic("woorimalsam"))
 
 ```{r,echo=FALSE}
 
+
 ggplot(total_dt[,.N,.(tag)], aes(x=reorder(tag, N), N)) +geom_bar(stat='identity') + xlab("KAIST tag") + coord_flip() + ggtitle("Tag frequency") + scale_y_continuous(labels = comma)
 
 

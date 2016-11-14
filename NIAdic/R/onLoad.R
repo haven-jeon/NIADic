@@ -26,10 +26,16 @@
     #make database
     conn <- dbConnect(SQLite(), han_db_path)
     on.exit({dbDisconnect(conn)})
+    packageStartupMessage("Building dictionary database...")
     dbWriteTable(conn,"woorimalsam", woorimalsam)
     dbWriteTable(conn,"insighter", insighter)
     dbWriteTable(conn,"sejong", sejong)
     rm(woorimalsam, insighter, sejong)
+    if( all(c('woorimalsam', 'insighter', 'sejong') %in% dbListTables(conn)) ){
+      packageStartupMessage("Database building completed.")
+    }else{
+      stop("Building dictionary database was failed.")
+    }
   }
 
   assign("dic_rda_path", dic_rda_path, .NIADicEnv)
