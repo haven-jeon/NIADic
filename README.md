@@ -15,6 +15,17 @@ To install from GitHub, use
     install_github('haven-jeon/NIADic/NIAdic', build_vignettes = TRUE)
 
 
+To download each dictionary with text format.
+
+    install.packages('devtools')
+    devtools::install_github('haven-jeon/NIADic/NIAdic', build_vignettes = TRUE)
+    library(NIAdic)
+    woorimalsam <- get_dic('woorimalsam')
+    insighter <- get_dic('insighter')
+    sejong <- get_dic('sejong')
+    
+
+
 We will provide this package from [NIA package repository]() after development.
 
 - [NIA_Dic Dictionary status fro KoNLP](https://htmlpreview.github.io/?https://github.com/haven-jeon/NIADic/blob/master/NIAdic/vignettes/insighter-dic.html)
