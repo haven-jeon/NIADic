@@ -17,7 +17,7 @@ vignette: >
 
 ```{r,echo=F,message=FALSE}
 library(ggplot2)
-library(NIAdic)
+library(NIADic)
 library(data.table)
 library(scales)
 

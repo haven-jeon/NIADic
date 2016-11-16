@@ -1,13 +1,13 @@
 #Copyright 2016 Heewon Jeon(madjakarta@gmail.com)
 #
-#This file is part of NIAdic.
+#This file is part of NIADic.
 #
-#NIAdic is free software: you can redistribute it and/or modify
+#NIADic is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
 #(at your option) any later version.
 
-#NIAdic is distributed in the hope that it will be useful,
+#NIADic is distributed in the hope that it will be useful,
 #but WITHOUT ANY WARRANTY; without even the implied warranty of
 #MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #GNU General Public License for more details.
@@ -28,11 +28,11 @@
 #' @import RSQLite
 get_dic <- function(dic_name){
 
-  dic_path <- file.path(system.file(package='NIAdic'), "hangul.db")
+  dic_path <- file.path(system.file(package='NIADic'), "hangul.db")
   conn <- dbConnect(SQLite(), dic_path)
   on.exit({dbDisconnect(conn)})
   if(!(dic_name %in% dbListTables(conn))){
-    stop(sprintf("NIAdic does not contain '%s' dictionary!", dic_name))
+    stop(sprintf("NIADic does not contain '%s' dictionary!", dic_name))
   }
   dic <- dbGetQuery(conn, sprintf("select * from %s", dic_name))
   Encoding(dic$term) <- 'UTF-8'
