@@ -7,7 +7,7 @@
 get_dic(dic_name)
 }
 \arguments{
-\item{dic_name}{one of dictionary name, \strong{woorimalsam}, \strong{insighter}, \strong{sejong}}
+\item{dic_name}{one of dictionary name(character), \strong{woorimalsam}, \strong{insighter}, \strong{sejong}}
 }
 \value{
 The \code{data.frame} object contains tags and terms

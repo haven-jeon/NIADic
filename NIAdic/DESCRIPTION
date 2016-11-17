@@ -8,11 +8,12 @@ Authors@R: c(
 Maintainer: Heewon Jeon <madjakarta@gmail.com>
 Description: The Korean dictionary for morphological analysis, NIADic, was compiled as an enhancement of the original KoNLP, to help users get more accurate and stable result from text analysis. With the unstinted support from MSIP(Ministry of  Science, ICT and Future Planning), NIADic was developed by NIA (National Information Society Agency) with the leading contribution from the original developer, Heewon Jeon.  NIA also greatly acknowledges National Institute of the Korean Language (NIKL) as providing generously the source of Korean word dictionary.
 Encoding: UTF-8
+Date: 2016-11-17
 Depends:
      R (>= 3.3.1)
 Imports:
      RSQLite (>= 1.0.0)
-License: GPL-3
+License: CC BY
 URL: https://github.com/haven-jeon/NIADic
 BugReports: https://github.com/haven-jeon/NIADic/issues
 RoxygenNote: 5.0.1

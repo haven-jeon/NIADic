@@ -1,0 +1,14 @@
+year <- sub("-.*", "", meta$Date)
+note <- sprintf("R package version %s", meta$Version)
+
+bibentry(bibtype = "Manual",
+         title = "NIADic: NIA(National Information Society Agency) Korean Dictionaries",
+         author = c(
+              person(family = "NIA(National Information Society Agency)", role = "aut"),
+              person("Heewon", "Jeon", role = c("aut", "cre"), email = "madjakarta@gmail.com")),
+         year = year,
+         note = note,
+         url = "https://github.com/haven-jeon/NIADic",
+         licence = "CC BY")
+
+

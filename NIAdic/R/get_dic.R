@@ -16,7 +16,7 @@
 
 #' Get Dictionary
 #'
-#' @param dic_name one of dictionary name, \strong{woorimalsam}, \strong{insighter}, \strong{sejong}
+#' @param dic_name one of dictionary name(character), \strong{woorimalsam}, \strong{insighter}, \strong{sejong}
 #'
 #' @return The \code{data.frame} object contains tags and terms
 #' @export
