@@ -1,5 +1,7 @@
 # NIA(National Information Society Agency) Dictionary
 
+[![License: CC BY](https://img.shields.io/badge/License-CC%20BY-lightgrey.svg)(https://creativecommons.org/licenses/by/2.0/)
+
 The Korean dictionary for morphological analysis, NIADic, was compiled as an enhancement of the original [KoNLP][konlp], to help users get more accurate and stable result from text analysis. With the unstinted support from MSIP(Ministry of  Science, ICT and Future Planning), NIADic was developed by [NIA (National Information Society Agency)](http://eng.nia.or.kr/english/eng_nia.asp) with the leading contribution from the original developer, [Heewon Jeon](http://freesearch.pe.kr).  NIA also greatly acknowledges National Institute of the Korean Language (NIKL) as providing generously the source of Korean word dictionary.
 
 
