@@ -26,11 +26,10 @@ To download each dictionary with text format.
 
 We will provide this package from [NIA package repository]() after development.
 
-- [NIA_Dic Dictionary status fro KoNLP](https://htmlpreview.github.io/?https://github.com/haven-jeon/NIADic/blob/master/NIADic/vignettes/insighter-dic.html)
-
-- [WooRiMalSam Dictionary status for KoNLP](https://htmlpreview.github.io/?https://github.com/haven-jeon/NIADic/blob/master/NIADic/vignettes/woorimalsam-dic.html)
-  + [About WooRiMalSam Dictionary](https://ko.wikipedia.org/wiki/%EC%9A%B0%EB%A6%AC%EB%A7%90_%EC%83%98)
-
+- NIADic Status
+  - [Insighter Dictionary](https://htmlpreview.github.io/?https://github.com/haven-jeon/NIADic/blob/master/NIADic/vignettes/insighter-dic.html)
+  - [WooRiMalSam Dictionary](https://htmlpreview.github.io/?https://github.com/haven-jeon/NIADic/blob/master/NIADic/vignettes/woorimalsam-dic.html)
+ 
 
 [konlp]:http://cran.r-project.org/web/packages/KoNLP/index.html
 
