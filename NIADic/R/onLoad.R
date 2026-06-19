@@ -19,13 +19,19 @@
 
 #' @importFrom RSQLite dbConnect dbWriteTable dbDisconnect SQLite
 .onAttach <- function(libname, pkgname){
-  han_db_path <- file.path(system.file(package=pkgname), "hangul.db")
-  dic_rda_path <- file.path(system.file(package=pkgname), "dics.RData")
-  if(!file.exists(han_db_path)){
-    load(dic_rda_path, envir=.NIADicEnv)
-    #make database
+  # Use a user-writable cache directory instead of the (potentially read-only)
+  # installed package inst/ directory.
+  cache_dir <- tools::R_user_dir(pkgname, which = "cache")
+  if (!dir.exists(cache_dir)) {
+    dir.create(cache_dir, recursive = TRUE, showWarnings = FALSE)
+  }
+  han_db_path <- file.path(cache_dir, "hangul.db")
+  dic_rda_path <- file.path(system.file(package = pkgname), "dics.RData")
+
+  if (!file.exists(han_db_path)) {
+    load(dic_rda_path, envir = .NIADicEnv)
     conn <- dbConnect(SQLite(), han_db_path)
-    on.exit({dbDisconnect(conn)})
+    on.exit(dbDisconnect(conn), add = TRUE)
     packageStartupMessage("Building dictionary database...")
     dbWriteTable(conn,"woorimalsam",  get("woorimalsam", envir=.NIADicEnv))
     dbWriteTable(conn,"insighter",    get("insighter", envir=.NIADicEnv))
@@ -42,5 +48,3 @@
   assign("hangul_db_path", han_db_path, .NIADicEnv)
   packageStartupMessage("Successfully Loaded NIADic Package.")
 }
-
-

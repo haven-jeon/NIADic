@@ -7,7 +7,7 @@ output:
     fig_width: 6
     fig_height: 8.5
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Insighter Dictionary}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -38,7 +38,7 @@ total_dt <- data.table(get_dic("insighter"))
 ggplot(total_dt[,.N,.(tag)], aes(x=reorder(tag, N), N)) +geom_bar(stat='identity') + xlab("KAIST tag") + coord_flip() + ggtitle("Tag frequency") + scale_y_continuous(labels = comma)
 
 
-ggplot(total_dt[,.N,in_category], aes(x=reorder(in_category, N), N)) +geom_bar(stat='identity') + xlab("category") + coord_flip() + ggtitle("NIA dictionary  category frequency") +  scale_y_continuous(labels = comma)
+ggplot(total_dt[,.N,.(category)], aes(x=reorder(category, N), N)) +geom_bar(stat='identity') + xlab("category") + coord_flip() + ggtitle("NIA dictionary  category frequency") +  scale_y_continuous(labels = comma)
 
 ```
 
@@ -47,8 +47,8 @@ ggplot(total_dt[,.N,in_category], aes(x=reorder(in_category, N), N)) +geom_bar(s
 
 
 ```{r, echo=FALSE}
-knitr::kable(total_dt[in_category %chin% 'place_name'][sample(nrow(total_dt[in_category %chin% 'place_name']), 10)], caption="위치 예시")
+knitr::kable(total_dt[category %chin% 'place_name'][sample(nrow(total_dt[category %chin% 'place_name']), 10)], caption="위치 예시")
 
-knitr::kable(total_dt[in_category %chin% 'brand_name'][sample(nrow(total_dt[in_category %chin% 'brand_name']), 10)],  caption="브랜드명 예시")
+knitr::kable(total_dt[category %chin% 'brand_name'][sample(nrow(total_dt[category %chin% 'brand_name']), 10)],  caption="브랜드명 예시")
 
 ```
