@@ -28,10 +28,10 @@
 #' @import RSQLite
 get_dic <- function(dic_name){
 
-  dic_path <- file.path(system.file(package='NIADic'), "hangul.db")
+  dic_path <- get("hangul_db_path", envir = .NIADicEnv)
   conn <- dbConnect(SQLite(), dic_path)
-  on.exit({dbDisconnect(conn)})
-  if(!(dic_name %in% dbListTables(conn))){
+  on.exit(dbDisconnect(conn), add = TRUE)
+  if (!(dic_name %in% dbListTables(conn))) {
     stop(sprintf("NIADic does not contain '%s' dictionary!", dic_name))
   }
   dic <- dbGetQuery(conn, sprintf("select * from %s", dic_name))
@@ -41,5 +41,3 @@ get_dic <- function(dic_name){
   }
   return(dic)
 }
-
-
